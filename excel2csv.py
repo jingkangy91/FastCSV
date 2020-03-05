@@ -3,11 +3,15 @@ import pandas as pd
 
 os.makedirs('csv', exist_ok=True)
 
-input_name = '试验4107list(1).xlsx'
+for name in os.listdir('.'):
+    if name.endswith('.xlsx'):
+        input_name = name
+
+# input_name = '试验4107list(1).xlsx'
 df = pd.read_excel(input_name)
 
-if input_name.endswith('.xlsx'):
-    print('Correct!')
+# if input_name.endswith('.xlsx'):
+    # print('Correct!')
 
 
 df['group'] = [x // 150 for x in list(df.index)]
