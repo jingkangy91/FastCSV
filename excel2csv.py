@@ -13,9 +13,11 @@ df = pd.read_excel(input_name)
 # if input_name.endswith('.xlsx'):
     # print('Correct!')
 
+# Split by 150
+# df['group'] = [x // 150 for x in list(df.index)]
 
-df['group'] = [x // 150 for x in list(df.index)]
-
+# Split by 2000
+df['group'] = [x // 2000 for x in list(df.index)]
 
 groups = df.groupby('group')
 
